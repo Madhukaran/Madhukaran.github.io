@@ -70,27 +70,31 @@
                             </p>
 
                             <p>
-                               In his free time, Madhukaran writes articles on <a href="" >Medium. </a></p>
+                               In his free time, Madhukaran writes articles on <a href="https://www.tensorbugs.in/" >Tensorbugs. </a></p>
 
                         </div>
                     </div>
                 </section>
 				
-				<section class="about section">
+				<!-- <section class="about section">
                     <div class="section-inner shadow-sm rounded">
                         <h2 class="heading">Languages Known</h2>
 						<hr class="divider" />
                         <div class="content">
-                           
+                           <ul class="d-flex flex-fill">
+                               <li class="d-flex flex-fill">English</li>
+                               <li class="d-flex flex-fill">Tamil</li>
+                               <li class="d-flex flex-fill">Hindi</li>
+                           </ul>
                         </div>
                     </div>
-                </section>
+                </section> -->
 
                
 
                <section class="latest section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Open Source Projects</h2>
+                        <h2 class="heading">Projects</h2>
                         <div class="content">
 
                             <hr class="divider" />
@@ -124,8 +128,21 @@
                                     <h3 class="title">Infoomagazines - A Deployed Django Blogging platform like Medium</h3>
                                     <p class="mb-2">A same Django blog With the extend Funtionalities with Proper Backend and SEO. The blog is deployed on Heroku it can be extend to more far for the Future.</p>
                                     <p><a class="more-link" href="https://infoomagazines.herokuapp.com" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
-                                </div><!--//desc-->
-                            </div><!--//item-->
+                                </div>
+                            </div>
+
+                            <div class="item row">
+                                <a class="col-md-4 col-12" href="https://www.tensorbugs.in/" target="_blank">
+                                <img class="img-fluid project-image rounded shadow-sm" src="assets/images/tensorbugs.PNG" alt="Tensorbugs" />
+                                </a>
+                                <div class="desc col-md-8 col-12">
+                                    <h3 class="title">Tensorbugs - A Tech Blog</h3>
+                                    <p class="mb-2">Tensorbugs is a Tech blog powered with CRM of Google Blogspot. The project is currently active and holds some tech posts on the blog.
+                                        the blog will be full of new posts and updates.Checkout the Blog <a href="https://www.tensorbugs.in/" target="_blank">here</a>.</p>
+                                    </p>
+                                    <p><a class="more-link" href="https://www.tensorbugs.in/" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+                                </div>
+                            </div>
 
 
                             <a class="btn btn-cta-secondary" href="https://github.com/Madhukaran" target="_blank">More on GitHub <i class="fas fa-chevron-right pt-1"></i></a>
@@ -133,6 +150,17 @@
                         </div><!--//content-->
                     </div><!--//section-inner-->
                 </section><!--//section-->
+
+                <!-- <section class="about section">
+                    <div class="section-inner shadow-sm rounded">
+                        <h2 class="heading">Recent Articles on Tensorbugs</h2>
+						<hr class="divider" />
+                        <div class="content">
+                           <ul id="recent_articles" class="list-unstyled">
+                           </ul>
+                        </div>
+                    </div>
+                </section> -->
 
             </div><!--//primary-->
             <div class="secondary col-lg-4 col-12">
@@ -144,6 +172,9 @@
                                 <li><i class="fas fa-map-marker-alt"></i><span class="sr-only">Location:</span>Tamilnadu, India</li>
                                 <li><i class="fas fa-envelope"></i><span class="sr-only">Email:</span><a href="mailto:madhukaran449@gmail.com">madhukaran449@gmail.com</a></li>
                                 <li><i class="fas fa-globe"></i><span class="sr-only">Website:</span><a href="https://madhukaran.github.io/">https://madhukaran.github.io/</a></li>
+                                <li><b>Languages Known:-</b></li>
+                                <li>&nbsp;&nbsp;1. English&nbsp;&nbsp;&nbsp;2. Tamil&nbsp;&nbsp;3. Hindi</li>
+                            </li>
                             </ul>
                         </div><!--//content-->
                     </div><!--//section-inner-->
@@ -181,7 +212,7 @@
                                 
                                 <li class="item">
                                     <span class="title"><strong>Databases:</strong></span>
-                                    <span class="level">PostgreSQL, MySQL, SQLite </span>
+                                    <span class="level">PostgreSQL, MySQL, SQLite, MongoDB </span>
                                 </li><!--//item-->
                                 <li class="item">
                                     <span class="title"><strong>API Specification:</strong></span>
@@ -226,14 +257,14 @@
 
                 <aside class="list music aside section">
                     <div class="section-inner shadow-sm rounded">
-                        <h2 class="heading">Recent Articles</h2>
+                        <h2 class="heading">Recent Articles on Tensorbugs</h2>
                         <div class="content">
-                            <ul class="list-unstyled">
-                    <li></li>
+                            <ul id="recent_articles">
                             </ul>
-                        </div><!--//content-->
-                    </div><!--//section-inner-->
-                </aside><!--//section-->
+                        </div>
+                        <a href="https://www.tensorbugs.in/">More on Tensorbugs >></a>
+                    </div>
+                </aside>
 
             </div><!--//secondary-->
         </div><!--//row-->
@@ -245,6 +276,24 @@
 
         </div><!--//container-->
     </footer><!--//footer-->
+    <script>
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", "https://www.googleapis.com/blogger/v3/blogs/1348154763005223376/posts/search?q=python&key=AIzaSyAExNWA3o8bpZcW9j2uAhjr4f6wNT4J230", false );
+        xmlHttp.send( null );
+        var recent_data = JSON.parse(xmlHttp.responseText).items; 
+        for (var i=0; i<=3; i++)
+        {
+            // var post_component = `<li>
+            //                        <div class="card m-2 p-2">
+            //                             <h3 class="title"><a href="${recent_data[i].url}" target="_blank">${recent_data[i].title}</a></h3>
+            //                             <p class="mb-2">${recent_data[i].title}</p>
+            //                             <p><a class="more-link" href="${recent_data[i].url}" target="_blank"><i class="fas fa-external-link-alt"></i>Find out more</a></p>
+            //                        </div>
+            //                    </li>`;
+            document.getElementById("recent_articles").innerHTML += "<li><a href="+recent_data[i].url+">"+recent_data[i].title+"</a></li>";
+            // document.getElementById("recent_articles").innerHTML += post_component;
+        }
+    </script>
 
 </body>
 </html>
