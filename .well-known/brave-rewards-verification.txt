@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: madhukaran.github.io
+Token: 7497996aab7c049c35023224c4355cb46c88ef63c3fa0e260d1b1451b2b7f4a1
